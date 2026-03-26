@@ -1,0 +1,333 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Terans' Course Management</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    />
+    <link rel="icon" href="./images/student.png" />
+
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap");
+
+      @keyframes fadeSlideUp {
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html {
+        font-size: 18px;
+      }
+
+      body {
+        font-family: "Space Grotesk", sans-serif;
+        font-weight: 500;
+        height: 100vh;
+        width: 100vw;
+      }
+
+      .full-page,
+      main {
+        background-color: #e6f6fb;
+      }
+
+      .full-page {
+        height: 100%;
+        width: 100%;
+        display: grid;
+        grid-template-rows: 1fr 4fr 2fr;
+        grid-template-columns: 1fr;
+      }
+
+      header {
+        background-color: #0f2854;
+        color: #ffffff;
+        display: flex;
+        flex-direction: row;
+        padding: 25px;
+        justify-content: space-between;
+      }
+
+      .header-left,
+      .header-right {
+        display: flex;
+      }
+
+      .header-left {
+        align-items: center;
+        gap: 15px;
+      }
+
+      .header-right {
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 15px;
+      }
+
+      .about-us-icons,
+      .contact-us-icons {
+        display: flex;
+      }
+
+      .about-us-icons {
+        justify-content: space-evenly;
+      }
+
+      .contact-us-icons {
+        flex-direction: row;
+        justify-content: space-between;
+      }
+
+      header i,
+      footer i {
+        font-size: 0.8rem;
+      }
+
+      header i {
+        color: #bde8f5;
+      }
+
+      footer i {
+        color: #4988c4;
+      }
+
+      header i:hover,
+      footer i:hover {
+        transform: scale(1.2);
+      }
+
+      header i:hover {
+        color: #ffffff;
+      }
+
+      footer i:hover {
+        color: #bde8f5;
+      }
+
+      main {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0 10px;
+      }
+
+      form {
+        width: 40%;
+        height: 70%;
+        background-color: #ffffff;
+        color: #081b3a;
+        border: 2px solid #4988c4;
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        padding: 20px;
+        box-shadow: 1px 0 5px 0 rgba(0, 0, 0, 0.75);
+        animation: fadeSlideUp 0.8s ease forwards;
+        opacity: 0;
+        transform: translateY(40px);
+      }
+
+      form > * {
+        width: 100%;
+      }
+
+      .inputs,
+      .contact-us {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .inputs {
+        gap: 5px;
+      }
+
+      .contact-us {
+        gap: 10px;
+      }
+
+      input,
+      button {
+        border-radius: 5px;
+        padding: 0 10px;
+        font-family: "Space Grotesk", sans-serif;
+      }
+
+      input {
+        width: 100%;
+        border: 1px solid #4988c4;
+        border-bottom: 2.5px solid #4988c4;
+        color: #0f2854;
+        height: 25px;
+        font-size: 0.7rem;
+        transition: all 0.3s ease;
+      }
+
+      button {
+        background-color: #1c4d8d;
+        color: #ffffff;
+        border: none;
+        height: 25px;
+        transition: all 0.3s ease;
+      }
+
+      input:hover,
+      button:hover {
+        cursor: pointer;
+      }
+
+      input:hover {
+        border: 2px solid #4988c4;
+        box-shadow: 1px 0 5px 0 rgba(0, 0, 0, 0.75);
+      }
+
+      button:hover {
+        background-color: #4988c4;
+        border: 2px solid #1c4d8d;
+      }
+
+      button:active {
+        border-color: #4988c4;
+      }
+
+      footer {
+        padding: 25px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+        background-color: #081b3a;
+        color: #bde8f5;
+      }
+
+      p {
+        font-size: 0.6rem;
+        text-align: center;
+      }
+
+      h3 {
+        font-size: 0.9rem;
+      }
+
+      i {
+        transition: all 0.3s ease;
+      }
+
+      /* ================= MEDIA QUERIES ================= */
+
+      @media (max-width: 700px) {
+        .header-right h3,
+        .header-left img {
+          display: none;
+        }
+
+        .about-us-icons {
+          gap: 50%;
+        }
+
+        .header-right {
+          justify-content: center;
+        }
+
+        form {
+          width: 50%;
+        }
+      }
+
+      @media (max-width: 400px) {
+        header {
+          justify-content: space-between;
+          padding: 25px 10px;
+        }
+
+        form {
+          width: 90%;
+          height: 90%;
+          justify-content: space-evenly;
+        }
+      }
+
+      @media (max-width: 261px) {
+        .full-page {
+          grid-template-rows: 1fr 6fr 2fr;
+        }
+
+        form {
+          padding: 2px 25px;
+        }
+
+        label,
+        button {
+          font-size: 0.8rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="full-page">
+      <header>
+        <div class="header-left">
+          <img src="./images/student.png" alt="student-image" width="40px" />
+          <h2>Student Course Management System</h2>
+        </div>
+        <div class="header-right">
+          <h3>About Us</h3>
+          <div class="about-us-icons">
+            <a href="https://github.com/teranschio"
+              target="_blank"><i class="fa-solid fa-house"></i
+            ></a>
+            <a href="https://www.frontendmentor.io/profile/teranschio"
+              target="_blank"><i class="fa-solid fa-user"></i
+            ></a>
+          </div>
+        </div>
+      </header>
+      <main>
+        <form action = "login" method = "POST">
+          <div class="inputs">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name = "username"/>
+          </div>
+          <div class="inputs">
+            <label for="password">Password:</label>
+            <input type="password" id="password" name = "password"/>
+          </div>
+          <button type="submit">Login</button>
+        </form>
+      </main>
+      <footer>
+        <div class="contact-us">
+          <h3>Contact Us</h3>
+          <div class="contact-us-icons">
+            <a href="mailto:teranssundersingh@gmail.com"
+              target="_blank"><i class="fa-solid fa-envelope"></i
+            ></a>
+            <a href="https://github.com/teranschio"
+              target="_blank"><i class="fa-brands fa-github"></i
+            ></a>
+            <a href="https://www.linkedin.com/in/terans-david-s-104ba020a"
+              target="_blank"><i class="fa-brands fa-linkedin"></i
+            ></a>
+          </div>
+        </div>
+        <p>
+          This website is designed and developed for use by a single
+          administrator only. Unauthorized access or use by other users is not
+          permitted.
+        </p>
+      </footer>
+    </div>
+    <script></script>
+  </body>
+</html>
