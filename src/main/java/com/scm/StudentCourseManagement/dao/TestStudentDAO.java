@@ -1,5 +1,10 @@
 package com.scm.StudentCourseManagement.dao;
 
+//import java.sql.Date;
+//import java.time.LocalDate;
+//
+//import com.scm.StudentCourseManagement.model.Student;
+
 public class TestStudentDAO {
     public static void main(String[] args){
         try{
