@@ -25,7 +25,7 @@ public class UserDAO {
 //                    return true;
 //                }
                 
-                if (storedHash == "a0/98Ujvsdj9sVp8eMl7CpU/VNjBUvUd8vNj.N.NyAaiaArK") {
+                if (storedHash == "QAswEDfr4132@#") {
                     return true;
                 }
             }
