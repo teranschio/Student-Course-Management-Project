@@ -21,11 +21,7 @@ public class UserDAO {
 
             if (rs.next()) {
                 String storedHash = rs.getString("password_hash");
-//                if (BCrypt.checkpw(password, storedHash)) {
-//                    return true;
-//                }
-                
-                if (storedHash == "QAswEDfr4132@#") {
+                if (BCrypt.checkpw(password, storedHash)) {
                     return true;
                 }
             }

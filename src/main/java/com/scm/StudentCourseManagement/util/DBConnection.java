@@ -7,12 +7,15 @@ import java.sql.SQLException;
 public class DBConnection {
 
     // Railway MySQL connection details
-    private static final String URL = "jdbc:mysql://caboose.proxy.rlwy.net:44793/railway?useSSL=false&allowPublicKeyRetrieval=true";
-    private static final String USER = "root";
-    private static final String PASSWORD = "VCyzEFwuGITfomspGdLxmewHmTIePygs";
+	private static final String URL = System.getenv("DB_URL");
+	private static final String USER = System.getenv("DB_USER");
+	private static final String PASSWORD = System.getenv("DB_PASS");
 
     public static Connection getConnection() throws SQLException {
         try {
+        	if (URL == null) {
+        	    throw new SQLException("DB_URL environment variable not set!");
+        	}
             // Load MySQL JDBC driver
             Class.forName("com.mysql.cj.jdbc.Driver");
             // Return connection
